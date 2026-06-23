@@ -1,5 +1,5 @@
 # CozyNote
-![alt text](image.png)
+<img width="1918" height="1025" alt="image" src="https://github.com/user-attachments/assets/5d4def09-a1f9-473d-bc5e-c9c37150af46" />
 JavaFX 21 기반의 블록형 메모장 앱입니다. 사진의 설계 흐름에 맞춰 Gradle, 블록 데이터 모델, SQLite 저장 방식을 반영했습니다.
 
 ## 실행
