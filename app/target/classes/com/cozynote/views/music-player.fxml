@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" pannable="true"
+            styleClass="widget-scroll" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.cozynote.ui.widgets.MusicPlayerController">
+    <content>
+        <VBox fx:id="widgetRoot" minWidth="420" prefWidth="420" maxWidth="420" spacing="12" styleClass="widget-panel">
+            <VBox alignment="TOP_CENTER" spacing="14" styleClass="widget-card mp3-player-card">
+                <HBox alignment="CENTER" maxWidth="Infinity" spacing="10" styleClass="mp3-top-bar">
+                    <Label text="&#9675;" styleClass="mp3-status-dot"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label text="&#51020;&#50501; &#54540;&#47112;&#51060;&#50612;" styleClass="widget-title mp3-banner"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button fx:id="trackListButton" text="&#8801;" onAction="#openTrackList" styleClass="toolbar-button mp3-menu-button"/>
+                </HBox>
+                <VBox alignment="CENTER" maxWidth="Infinity" spacing="12" styleClass="mp3-display-panel">
+                    <StackPane prefWidth="292" prefHeight="292" minWidth="292" minHeight="292" maxWidth="292" maxHeight="292" styleClass="album-art-frame">
+                        <ImageView fx:id="albumImageView" fitWidth="270" fitHeight="270" preserveRatio="true" smooth="true"/>
+                    </StackPane>
+                    <HBox alignment="CENTER" spacing="3" styleClass="mp3-waveform">
+                        <Region styleClass="mp3-wave-bar wave-s"/>
+                        <Region styleClass="mp3-wave-bar wave-m"/>
+                        <Region styleClass="mp3-wave-bar wave-l"/>
+                        <Region styleClass="mp3-wave-bar wave-m"/>
+                        <Region styleClass="mp3-wave-bar wave-xl"/>
+                        <Region styleClass="mp3-wave-bar wave-l"/>
+                        <Region styleClass="mp3-wave-bar wave-s"/>
+                        <Region styleClass="mp3-wave-bar wave-m"/>
+                        <Region styleClass="mp3-wave-bar wave-xl"/>
+                        <Region styleClass="mp3-wave-bar wave-l"/>
+                        <Region styleClass="mp3-wave-bar wave-m"/>
+                        <Region styleClass="mp3-wave-bar wave-s"/>
+                        <Region styleClass="mp3-wave-bar wave-l"/>
+                        <Region styleClass="mp3-wave-bar wave-xl"/>
+                        <Region styleClass="mp3-wave-bar wave-m"/>
+                        <Region styleClass="mp3-wave-bar wave-s"/>
+                        <Region styleClass="mp3-wave-bar wave-m"/>
+                        <Region styleClass="mp3-wave-bar wave-l"/>
+                    </HBox>
+                </VBox>
+                <VBox alignment="CENTER" maxWidth="Infinity" spacing="9" styleClass="mp3-control-deck">
+                    <Label fx:id="titleLabel" maxWidth="Infinity" styleClass="track-title"/>
+                    <Label fx:id="artistLabel" maxWidth="Infinity" styleClass="muted mp3-subtitle"/>
+                    <Slider fx:id="progressSlider" maxWidth="Infinity" min="0" max="1" styleClass="mp3-slider"/>
+                    <HBox alignment="CENTER_LEFT" maxWidth="Infinity" spacing="8" styleClass="mp3-time-row">
+                        <Label fx:id="elapsedLabel" styleClass="muted"/>
+                        <Label text="/" styleClass="muted"/>
+                        <Label fx:id="durationLabel" styleClass="muted"/>
+                    </HBox>
+                    <HBox alignment="CENTER" maxWidth="Infinity" spacing="14" styleClass="mp3-control-row">
+                        <Button text="&#9198;" onAction="#previousTrack" styleClass="toolbar-button mp3-skip-button"/>
+                        <Button fx:id="playButton" text="&#9654;" onAction="#togglePlay" styleClass="primary-button mp3-play-button"/>
+                        <Button text="&#9197;" onAction="#nextTrack" styleClass="toolbar-button mp3-skip-button"/>
+                        <Button fx:id="repeatModeButton" text="&#8734;" onAction="#cycleRepeatMode" styleClass="repeat-mode-button mp3-control-button"/>
+                    </HBox>
+                    <Slider fx:id="volumeSlider" maxWidth="Infinity" min="0" max="1" styleClass="mp3-slider mp3-volume-slider"/>
+                </VBox>
+            </VBox>
+            <VBox spacing="12" styleClass="widget-card empty-widget-card">
+                <Label text="&#48120;&#45768; &#44172;&#51076; &#54056;&#45328;" styleClass="widget-title"/>
+                <StackPane fx:id="miniGameContainer"
+                           minHeight="400"
+                           prefHeight="400"
+                           maxHeight="400"
+                           styleClass="empty-widget-body"/>
+            </VBox>
+        </VBox>
+    </content>
+</ScrollPane>

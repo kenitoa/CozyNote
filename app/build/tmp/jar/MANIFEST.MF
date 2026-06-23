@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Main-Class: com.cozynote.CozyNoteApp
+Implementation-Title: CozyNote
+Implementation-Version: 0.1.0
+
